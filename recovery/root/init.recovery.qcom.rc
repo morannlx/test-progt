@@ -25,9 +25,19 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+
+
 on early-fs
     write /proc/sys/walt/sched_lib_name "recovery,Updater,updater,update_engine_sideload"
     write /proc/sys/walt/sched_lib_mask_force 255
+    exec -- touch /tmp/recovery.log
+    write /tmp/recovery.log "========================================\n"
+    write /tmp/recovery.log "【作者：酷安@墨染_nlx】\n"
+    write /tmp/recovery.log "[Supported device : TB710FU CN GL ]\n"
+    write /tmp/recovery.log "[构建日期:2026.1.03]\n"
+    write /tmp/recovery.log "[请勿随意传播此twrp]\n"
+    write /tmp/recovery.log "========================================\n"
+
 
 
 on init
